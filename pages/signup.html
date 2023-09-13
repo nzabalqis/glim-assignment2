@@ -1,0 +1,104 @@
+{{define "signup"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .registration-container {
+        border: 2px solid #333;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        width: 50%;
+        min-width: 300px;
+        box-sizing: border-box;
+        background-color: #333; /* Background color for the border */
+      }
+      .registration-form {
+        background-color: transparent;
+        color: #fff;
+      }
+      .registration-form h2 {
+        margin-bottom: 20px;
+      }
+      .registration-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .registration-form input[type="text"],
+      .registration-form input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #444;
+        color: #fff;
+      }
+      .registration-form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+      }
+      .registration-form button:hover {
+        background-color: #0056b3;
+      }
+      .registration-form p {
+        margin-top: 15px;
+        font-size: 14px;
+      }
+      .registration-form a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .registration-form a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="registration-container">
+      <div class="registration-form">
+        <h2>Sign Up</h2>
+        <p style="color: red">{{.Message}}</p>
+        <form action="/signup" method="POST">
+          <label for="firstname">First Name :</label>
+          <input type="text" id="firstname" name="firstname" required />
+
+          <label for="lastname">Last Name :</label>
+          <input type="text" id="lastname" name="lastname" required />
+
+          <label for="username">Username :</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password :</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/signin">Login Page</a></p>
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

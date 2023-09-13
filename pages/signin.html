@@ -1,0 +1,96 @@
+{{define "signin"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .login-form {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+      }
+      .login-form h2 {
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      .login-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #fff;
+      }
+      .login-form input[type="text"],
+      .login-form input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #444;
+        color: #fff;
+      }
+      .error {
+        margin-bottom: 15px;
+        color: red;
+      }
+      .login-form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+      }
+      .login-form button:hover {
+        background-color: #0056b3;
+      }
+      .login-form p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #fff;
+      }
+      .login-form a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .login-form a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-form">
+      <h2>Sign in</h2>
+      <form action="" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <p class="error">{{.Message}}</p>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
+  </body>
+</html>
+{{end}}
